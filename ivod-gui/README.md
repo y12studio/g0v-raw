@@ -1,6 +1,6 @@
 ## Project Info
  
-[電腦端立院IVOD下載器](https://g0v.hackpad.com/IVOD-KdTs5gZb3yw)
+[電腦端立院IVOD下載器 hackpad](https://g0v.hackpad.com/IVOD-KdTs5gZb3yw)
 
 [billy3321/ivod-download-client](https://github.com/billy3321/ivod-download-client)
 
@@ -12,7 +12,25 @@ python tool
 * [crtaci/player.py at master · gen2brain/crtaci](https://github.com/gen2brain/crtaci/blob/master/frontend/python/crtaci/player.py)
 * [kuyan/yaas](https://github.com/kuyan/yaas)
 
+php tool
+
+* [電腦端立院IVOD下載器(win protable) | 巴克里](http://jangmt.com/?p=108)
+
 ## Test Log
+
+Test 2014/09/27
+
+```
+$ cd ivod-gui/static
+$ bower init
+$ bower install --save Polymer/polymer
+$ bower install --save Polymer/core-elements
+$ bower install --save Polymer/paper-elements
+
+~/git/g0v-raw/ivod-gui$ sudo docker build -t test .
+~/git/g0v-raw/ivod-gui$ sudo docker run -p 8080:8080 test
+ * Running on http://0.0.0.0:8080/
+```
 
 Test 2014/09/26
 
@@ -48,44 +66,10 @@ ffmpeg version 2.4.1-   http://johnvansickle.com/ffmpeg/    Copyright (c) 2000-2
 [NULL @ 0x304e0c0] missing picture in access unit with size 33503
 [h264 @ 0x304e0c0] missing picture in access unit with size 730
 [h264 @ 0x304e0c0] missing picture in access unit with size 1385
-[h264 @ 0x304e0c0] missing picture in access unit with size 1380
-[h264 @ 0x304e0c0] missing picture in access unit with size 1447
-[h264 @ 0x304e0c0] missing picture in access unit with size 1389
-[h264 @ 0x304e0c0] missing picture in access unit with size 1631
-[h264 @ 0x304e0c0] missing picture in access unit with size 1496
-[h264 @ 0x304e0c0] missing picture in access unit with size 1502
-[h264 @ 0x304e0c0] missing picture in access unit with size 1701
-[h264 @ 0x304e0c0] missing picture in access unit with size 1627
-[h264 @ 0x304e0c0] missing picture in access unit with size 1575
-[h264 @ 0x304e0c0] missing picture in access unit with size 1788
-[h264 @ 0x304e0c0] missing picture in access unit with size 2124
-[h264 @ 0x304e0c0] missing picture in access unit with size 3646
-[h264 @ 0x304e0c0] missing picture in access unit with size 32205
-[h264 @ 0x304e0c0] missing picture in access unit with size 1002
-[h264 @ 0x304e0c0] missing picture in access unit with size 1431
-[h264 @ 0x304e0c0] missing picture in access unit with size 1639
-[h264 @ 0x304e0c0] missing picture in access unit with size 1896
-[h264 @ 0x304e0c0] missing picture in access unit with size 1750
-[h264 @ 0x304e0c0] missing picture in access unit with size 1934
-[h264 @ 0x304e0c0] missing picture in access unit with size 2044
-[h264 @ 0x304e0c0] missing picture in access unit with size 2054
-[h264 @ 0x304e0c0] missing picture in access unit with size 1969
-[h264 @ 0x304e0c0] missing picture in access unit with size 1936
-[h264 @ 0x304e0c0] missing picture in access unit with size 1676
-[h264 @ 0x304e0c0] missing picture in access unit with size 1754
-[h264 @ 0x304e0c0] missing picture in access unit with size 1843
-[h264 @ 0x304e0c0] missing picture in access unit with size 1897
-[h264 @ 0x304e0c0] missing picture in access unit with size 22075
-[h264 @ 0x304e0c0] missing picture in access unit with size 1476
-[h264 @ 0x304e0c0] missing picture in access unit with size 1400
-[h264 @ 0x304e0c0] missing picture in access unit with size 1378
-[h264 @ 0x304e0c0] missing picture in access unit with size 1417
-[h264 @ 0x304e0c0] missing picture in access unit with size 1376
-[h264 @ 0x304e0c0] missing picture in access unit with size 1338
-[h264 @ 0x304e0c0] missing picture in access unit with size 1329
-[h264 @ 0x304e0c0] missing picture in access unit with size 1327
+....
 [h264 @ 0x304e0c0] missing picture in access unit with size 1390
 [h264 @ 0x304e0c0] missing picture in access unit with size 1470
+
 Input #0, flv, from 'test.flv':
   Metadata:
     length          : 67365000
@@ -105,5 +89,4 @@ Input #0, flv, from 'test.flv':
     Stream #0:0: Video: h264 (Constrained Baseline), yuv420p(tv), 720x480 [SAR 8:9 DAR 4:3], 31.25 fps, 29.97 tbr, 1k tbn, 59.94 tbc
     Stream #0:1: Audio: aac, 48000 Hz, stereo, fltp
 At least one output file must be specified
-
 ```

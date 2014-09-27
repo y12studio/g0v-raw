@@ -9,12 +9,11 @@ from optparse import OptionParser
 from youtube_dl import YoutubeDL
 from youtube_dl.downloader import get_suitable_downloader
 from youtube_dl.downloader import F4mFD
+from restsrv import flaskrun
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
 currect_time = 0
-
 
 def init_cookie():
     cookie=cookielib.CookieJar()
@@ -89,15 +88,15 @@ def download_from_url(url):
         sys.stderr.write('get_movie_url content error')
         return False
 
-def get_video_info(url):
+def download_video(url,filepath):
     ydl = YoutubeDL()
     info = {'url':url,'protocol':'http'}
     f4mFD = F4mFD(ydl,{})
     #dl = F4mFD()
-    result = f4mFD.download(u'test.flv', info)
+    result = f4mFD.download(filepath, info)
     #return json.dumps(result)
 
-def main():
+def main_cli():
     usage = "usage: %prog [options]"
     parser = OptionParser(usage)
     parser.add_option("-u", "--url", dest="url",
@@ -110,9 +109,9 @@ def main():
         sys.exit(1)
     f4murl = download_from_url(options.url)
     print(f4murl)
-    ydlinfo = get_video_info(f4murl)
+    ydlinfo = download_video(f4murl,u'testdata/test.flv')
     print(ydlinfo)
 
 if __name__ == '__main__':
     # util.py -u 'http://ivod.ly.gov.tw/Play/VOD/76394/300K'
-    main()
+    flaskrun()

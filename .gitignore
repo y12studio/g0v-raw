@@ -54,3 +54,8 @@ docs/_build/
 target/
 
 *.flv
+
+# bower
+node_modules/
+npm-debug.log
+bower_components/
