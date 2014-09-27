@@ -1,8 +1,10 @@
-FROM y12docker/pbase
+FROM google/python
 
-ADD . /opt/app
-RUN pip install -r /opt/app/requirements.txt
-WORKDIR /opt/app
+WORKDIR /app
+RUN virtualenv /env
+ADD requirements.txt /app/requirements.txt
+RUN /env/bin/pip install -r requirements.txt
+ADD . /app
 
-CMD ["/sbin/my_init"]
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+CMD []
+ENTRYPOINT ["/env/bin/python", "/app/main.py"]
