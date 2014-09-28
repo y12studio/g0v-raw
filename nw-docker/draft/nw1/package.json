@@ -1,0 +1,9 @@
+{
+    "name ": "nw-docker",
+    "description" : "test node-webkit",
+    "version" : "0.0.1",
+	"author" : "Y12STUDIO <y12studio@gmail.com>",
+	"dependencies" : {
+		"dockerode" : "2.0.x"
+	}
+}
