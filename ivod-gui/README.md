@@ -21,15 +21,18 @@ php tool
 Test 2014/09/27
 
 ```
-$ cd ivod-gui/static
+$ cd ~/git/g0v-raw/ivod-gui/static
 $ bower init
 $ bower install --save Polymer/polymer
 $ bower install --save Polymer/core-elements
 $ bower install --save Polymer/paper-elements
 
-~/git/g0v-raw/ivod-gui$ sudo docker build -t test .
-~/git/g0v-raw/ivod-gui$ sudo docker run -p 8080:8080 test
+~/git/g0v-raw/ivod-gui$ sudo docker build -t y12docker/g0v-ivod .
+~/git/g0v-raw/ivod-gui$ sudo docker run -p 8080:8080 y12docker/g0v-ivod
  * Running on http://0.0.0.0:8080/
+~/git/g0v-raw/ivod-gui$ sudo docker push y12docker/g0v-ivod
+The push refers to a repository [y12docker/g0v-ivod] (len: 1)
+ 
 ```
 
 Test 2014/09/26
