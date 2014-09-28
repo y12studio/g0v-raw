@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World!</title>
+    <meta name="description" content="polymer paper login template" />
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/paper-elements/paper-elements.html">
+    <link rel="import" href="bower_components/core-elements/core-elements.html">
+    <link rel="import" href="hello-world.html">
+    <link rel="import" href="container-list.html">
+    <style>
+     body {
+    font-family: sans-serif;
+  }
+    paper-button {
+      margin: 1em;
+      width: 10em;
+    }
+    paper-button[raisedButton].colored {
+      background: #4285f4;
+      color: #fff;
+    }
+    paper-button[raisedButton].colored #ripple,
+    paper-button[raisedButton].colored::shadow #ripple {
+      color: #2a56c6;
+    }
+    paper-button[raisedButton].colored #focusBg,
+    paper-button[raisedButton].colored::shadow #focusBg {
+      background: #3367d6;
+    }
+    </style>
+  </head>
+  <body>  
+  
+  <core-scaffold>
+  <core-header-panel navigation flex mode="seamed">
+    <core-toolbar>nw-docker</core-toolbar>
+    <core-menu theme="core-light-theme">
+      <core-item icon="settings" label="Download"></core-item>
+      <core-item icon="settings" label="URL"></core-item>
+    </core-menu>
+  </core-header-panel>
+  <div tool>Docker App List</div>
+  <div>  
+    <div>
+    <paper-dialog>
+      <div horizontal layout end-justified>
+        <core-icon-button icon="close" onclick="dialog.toggle()"></core-icon-button>
+      </div>
+      <div style="font-size: x-large;">RUN Docker Container</div><br>
+      <paper-input label="Image Name"></paper-input><br>
+      <paper-input label="Port"></paper-input><br>
+     <paper-button raisedButton onclick="dialog.toggle()">SUBMIT</paper-button>
+   </paper-dialog>
+<paper-button label="RUN" raisedButton class="colored"  onclick="dialog.toggle()">
+</paper-button>
+  </div>
+
+   <container-list></container-list>
+  <footer>
+  <div>
+     <div class="links">  
+      <a href="https://github.com/y12studio/g0v-raw/tree/master/ivod-gui">github y12studio/g0v-raw</a>
+    </div>
+    <p id="copyright">&copy; 2014 Y12STUDIO Authors <hello-world who="Y12Studio"></hello-world> . Code licensed under the <a href="http://github.com/y12studio/g0v-raw/" target="_blank">Apache License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.</p>
+  </div>
+</footer>
+</div>
+</core-scaffold>
+  
+<script>
+var dialog = document.querySelector('paper-dialog');
+addEventListener('polymer-ready', function() {
+   // 
+});
+
+</script>
+  </body>
+</html>

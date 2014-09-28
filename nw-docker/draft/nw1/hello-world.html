@@ -1,0 +1,19 @@
+﻿<!-- Import Polymer -->
+<link rel="import" href="bower_components/polymer/polymer.html">
+<!-- Define your custom element -->
+<polymer-element name="hello-world" attributes="who">
+
+    <template>
+        <span>Hello <strong>{{who}}</strong> :)</span> {{os}}
+    </template>
+
+    <script>
+        var os = require('os');
+        Polymer('hello-world', {
+        	who : 'Y12',
+        	ready : function () {
+        		this.os = os.platform();
+        	}
+        });
+    </script>
+</polymer-element>

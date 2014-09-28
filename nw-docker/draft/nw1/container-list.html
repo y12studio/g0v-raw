@@ -1,0 +1,70 @@
+﻿<!-- Import Polymer -->
+<link rel="import" href="bower_components/polymer/polymer.html">
+<!-- Define your custom element -->
+<polymer-element name="container-list">
+<template>
+<style>
+  .header{
+     font-size:1.5em;
+     text-align:left;
+  }
+  .item {
+      box-sizing: border-box;
+      height: 25px;
+      border-bottom: 1px solid #ddd;
+      padding: 4px;
+      cursor: default;
+      background-color: white;
+      overflow: hidden;
+   }
+   
+   .image {
+      margin-left:10px;
+      display: inline-block;
+      width: 250px;
+   }
+   
+   .item.selected {
+      background: orange;
+   }
+</style>
+<h3>Containers({{num}})</h3>
+<div class="header" horizontal layout>
+  <div flex>Image</div>
+  <div>Status</div>
+</div>
+<core-list data="{{data}}" height="30">
+  <template>
+    <div class="item">
+      <span class="image">{{Image}}</span>
+      <span>{{Status}}</span>
+    </div>
+  </template>
+</core-list>
+</template>
+    <script>
+        var os = require('os');
+        var listcon = require('./listcontainer.js');
+        var gdata = [];
+        Polymer('container-list', {
+        	num : 0,
+        	ready : function () {
+                this.data = gdata;
+        		this.os = os.platform();
+        		listcon.list(this.callback_list);
+        	},
+
+        	dataChanged : function () {
+        		this.num = this.data.length;
+        	},
+
+        	callback_list : function (err, containers) {
+        		console.log('ALL: ' + containers.length);
+        		containers.forEach(function (c) {
+        			console.log(c);
+        			gdata.push(c);
+        		});
+        	}
+        });
+    </script>
+</polymer-element>
